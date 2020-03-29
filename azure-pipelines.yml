@@ -1,0 +1,28 @@
+# Starter pipeline
+- task: GitHubPagesPublish@1
+  inputs:
+    docPath: '$(System.DefaultWorkingDirectory)\Documentation\site\*'
+    githubusername: 'rsaa'
+    githubemail: 'gandhi.rajeev@gmail.com'
+    githubaccesstoken: 'f411a5d1b152b4b17979a11c15ed09bdebaf960c'
+    repositoryname: 'gh-pages'
+    branchname: 'master'
+    commitmessage: 'Automated Release $(Release.ReleaseId)'
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
